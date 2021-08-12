@@ -1,0 +1,8 @@
+server:
+  port: 9009
+license:
+  subject: pushi-kn-graph
+  publicAlias: publicCert
+  storePass: qwer1234666
+  licensePath: D:/workSrc/pushiAI/genlicense/license.lic
+  publicKeysStorePath: D:/workSrc/pushiAI/genlicense/publicCerts.keystore
