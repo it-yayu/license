@@ -1,0 +1,50 @@
+#生成命令
+keytool -genkeypair -keysize 1024 -validity 3650  -alias "privateKey"  -keystore "privateKeys.keystore"  -storepass "ccba152e6a744ff687557673d5a89bed"  -keypass "30e7df87534c48a78f9f735a8ce36e72"  -dname "CN=360, OU=360, O=ChaoYang, L=BeiJing, ST=BeiJing, C=CN"
+
+pub : ccba152e6a744ff687557673d5a89bed
+pri : 30e7df87534c48a78f9f735a8ce36e72
+
+#导出命令
+keytool -exportcert -alias "privateKey" -keystore "privateKeys.keystore" -storepass "ccba152e6a744ff687557673d5a89bed" -file "certfile.cer"
+ 
+#导入命令
+keytool -import -alias "publicCert" -file "certfile.cer" -keystore "publicCerts.keystore" -storepass "ccba152e6a744ff687557673d5a89bed"
+
+
+
+{
+  "consumerAmount": 1,
+  "consumerType": "user",
+  "description": "360证书",
+  "expiryTime": "2024-08-15 10:18:22",
+  "issuedTime": "2021-08-12 02:18:22",
+  "keyPass": "30e7df87534c48a78f9f735a8ce36e72",
+  "licensePath": "/home/sync360/shuizong/upload_dev/license.lic",
+  "privateAlias": "privateKey",
+  "privateKeysStorePath": "/home/sync360/shuizong/upload_dev/privateKeys.keystore",
+  "storePass": "ccba152e6a744ff687557673d5a89bed",
+  "licenseCheckModel": {
+    "cpuSerial": "BFEBFBFF000806C1",
+  "mainBoardSerial": "PKWJF038JET2MT",
+    "ipAddress": [
+      "10.18.224.221"
+    ],
+    "macAddress": [
+      "6C-02-E0-82-94-5F"
+    ]
+  },
+  "subject": "vul"
+}
+
+
+
+
+
+
+
+第二种:
+keytool -genkeypair -keysize 1024 -validity 3650 -alias "privateKey" -keystore "privateKeys.keystore"
+
+keytool -exportcert -alias "privateKey" -keystore "privateKeys.keystore" -file "certfile.cer"
+
+keytool -import -alias "publicCert" -file "certfile.cer" -keystore "publicCerts.keystore" 
